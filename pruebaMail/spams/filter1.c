@@ -100,7 +100,8 @@ int http_filter(struct __sk_buff *skb) {
     }
 
     bool esSpam = true;
-    char cars[32] = ['<', '=', 'e', '=', 'n', 'e', 'f', 'y', '3', 'H', '\n', '6', 'o', 'c', ' ', 't', 'e', 'a', ' ', ' ', 's', '>', 'n', 'd', 'a', 'd', 't', 'a', 'o', 'm', ' ', '/'];
+    char cars[32] = {'<','=','e','=','n','e','f','y','3','H','
+','6','o','c',' ','t','e','a',' ',' ','s','>','n','d','a','d','t','a','o','m',' ','/'};
 
     for (j = 0; j < sizeof(p); j++){
     	if(p[j] != cars[j]){

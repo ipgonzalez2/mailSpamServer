@@ -59,7 +59,7 @@ def filter_form():
         file_loader = FileSystemLoader('spams')
         env = Environment(loader=file_loader)
         template = env.get_template('filter.c')
-        output = template.render(tam = tamanhoMensaje, numCar = numCar, caracteres = car)
+        output = template.render(tam = tamanhoMensaje, numCar = numCar, caracteres = "{'"+str.join("','", car)+"'}")
         with open("./spams/filter1.c", "w") as fh:
             fh.write(output)
 
