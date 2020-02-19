@@ -1,0 +1,21 @@
+    {% extends "base_template.html" %}
+    {% block title %}New antispam filter{% endblock %}
+    {% block content %}
+        <form action="" method="post" enctype="multipart/form-data" novalidate>
+            {{ form.hidden_tag() }}
+            <div>
+                {{ form.porcentaje.label }}
+                {{ form.porcentaje }}<br>
+                {% for error in form.porcentaje.errors %}
+                <span style="color: red;">{{ error }}</span>
+                {% endfor %}
+            </div>
+            <div>
+                <label for="spamFile">Spam a filtrar:</label>
+                <input type="file" id="spamFile" name="spamFile">
+            </div>
+            <div>
+                {{ form.submit() }}
+            </div>
+        </form>
+    {% endblock %}
